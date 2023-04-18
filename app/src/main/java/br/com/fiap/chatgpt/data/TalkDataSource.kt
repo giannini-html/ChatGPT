@@ -38,8 +38,8 @@ object TalkDataSource {
         TalkModel(
             "O Palmeiras tem mundial?",
             listOf(
-                AnswerModel("Não."),
-                AnswerModel("O Palmeiras não tem mundial!", true)
+                AnswerModel("Sim!!!"),
+                AnswerModel("Dale Porcoo!", true)
             )
         ),
         TalkModel(

@@ -6,6 +6,7 @@ import android.os.Bundle
 import br.com.fiap.chatgpt.R
 import br.com.fiap.chatgpt.data.TalkModel
 import br.com.fiap.chatgpt.databinding.ActivityAnswersBinding
+import br.com.fiap.chatgpt.presentation.adapter.AnswerAdapter
 
 class AnswersActivity : AppCompatActivity() {
 
@@ -18,6 +19,17 @@ class AnswersActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityAnswersBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupRecyclerView()
+        binding.textInputEditTextQuestion.setText(talkModel.question)
+    }
+
+    private fun setupRecyclerView() {
+        talkModel?.answers?.let {
+            binding.recyclerViewAnswers.adapter = AnswerAdapter(
+                it,
+                ::callImplicitIntent
+            )
+        }
     }
 
     private fun callImplicitIntent(messageValue: String) {

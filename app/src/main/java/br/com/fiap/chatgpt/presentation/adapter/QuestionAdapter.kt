@@ -10,7 +10,7 @@ import br.com.fiap.chatgpt.databinding.ViewQuestionItemBinding
 
 class QuestionAdapter(
     private val talkList: List<TalkModel>,
-    private val OnCardClick: (TalkModel) -> Unit
+    private val onCardClick: (TalkModel) -> Unit
 ) :
     RecyclerView.Adapter<QuestionAdapter.QuestionViewHolder>() {
 
@@ -22,7 +22,7 @@ class QuestionAdapter(
         fun bind(item: TalkModel) {
             binding.questionTitle.text = item.question
             binding.root.setOnClickListener {
-                OnCardClick.invoke(item)
+                onCardClick.invoke(item)
             }
         }
     }

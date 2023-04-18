@@ -1,6 +1,5 @@
 package br.com.fiap.chatgpt.presentation.adapter
 
-
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,7 @@ class AnswerAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnswerViewHolder {
         return AnswerViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.view_answer_item, parent, false),
+                .inflate(R.layout.view_answer_item, parent, false)
         )
     }
 
@@ -42,4 +41,4 @@ class AnswerAdapter(
             }
         }
     }
-}   
+}
